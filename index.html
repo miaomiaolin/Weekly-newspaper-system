@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>周报</title>
+  <link rel="stylesheet" href="./css/layui.css">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="layui-layout-body weekBody" onLoad="winpop();">
+<!-- <div id="mask" class="mask"></div>
+<div id="loadPage" class="loadPage">
+	<div class="layui-row">
+		<h3>全店商品</h3>
+	</div>
+	<div class="layui-row layui-col-space5">
+			<div class="layui-col-md2">
+				<input type="text" name="title" required  lay-verify="required" placeholder="请输入产品ID" autocomplete="off" class="layui-input">
+			</div>
+			<div class="layui-col-md1">
+				<input type="button" class="layui-btn thisWidth" value="搜索" >
+			</div>
+			<div class="layui-col-md1">
+				<input type="button" class="layui-btn  layui-btn-warm thisWidth"  value="添加" >
+			</div>
+		</div>
+ 	<table class="layui-table" lay-size="sm">
+		<thead>
+			<tr>
+				<th></th>
+				<th>排序</th>
+				<th>主图</th>
+				<th>产品ID</th>
+				<th>GMV</th>
+				<th>曝光量</th>
+				<th>UV</th>
+				<th>订单</th>
+				<th>L-D</th>
+				<th>D-O</th>
+				<th>客单价</th>
+				<th>售价</th>
+				<th>品类</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="" title="" lay-skin="primary"> </td>
+				<td>1</td>
+				<td><img src="images/tream.jpg" alt=""></td>
+				<td>201520162017</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100</td>
+				<td>1000</td>
+				<td>连衣裙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" title="" lay-skin="primary"> </td>
+				<td>2</td>
+				<td><img src="images/tream.jpg" alt=""></td>
+				<td>201520162017</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100</td>
+				<td>1000</td>
+				<td>连衣裙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" title="" lay-skin="primary"> </td>
+				<td>3</td>
+				<td><img src="images/tream.jpg" alt=""></td>
+				<td>201520162017</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100</td>
+				<td>1000</td>
+				<td>连衣裙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" title="" lay-skin="primary"> </td>
+				<td>4</td>
+				<td><img src="images/tream.jpg" alt=""></td>
+				<td>201520162017</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100</td>
+				<td>1000</td>
+				<td>连衣裙</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="" title="" lay-skin="primary"> </td>
+				<td>5</td>
+				<td><img src="images/tream.jpg" alt=""></td>
+				<td>201520162017</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>100</td>
+				<td>1000</td>
+				<td>连衣裙</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="layui-row">
+		<div id="test1"></div>
+	</div>
+	<div class="layui-row">
+		<div class="layui-col-md4"></div></div>
+		<div class="layui-col-md4"></div></div>
+		<div class="layui-col-md4"><div id="test1"></div></div>
+	</div>
+</div> -->
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo" > 跨境谷内部工具V1版</div>
+    <div class="layui-line nav-hidde" onclick="navBlock();"><a href=""><i class="layui-icon" style="">&#xe671;</i></a></div>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          贤心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="">退了</a></li>
+    </ul>
+  </div>
+</div>
+ <div class="layui row selectTiem">
+	 	<form class="layui-form" action="">
+	 		<div class="layui-row layui-col-space5">
+		 		<div class="layui-col-md2">
+					<input type="text" name="title" required  lay-verify="required" placeholder="请输入店铺ID" autocomplete="off" class="layui-input">
+		 		</div>
+		 		<div class="layui-col-md2">
+		 			<select name="city" id="">
+		 				<option value="">请选择日期</option>
+		 				<option value="">2017.12.16</option>
+		 				<option value="">2017.12.9</option>
+		 				<option value="">2017.12.2</option>
+		 			</select>
+		 		</div>
+		 		<div class="layui-col-md1"><input type="button" class="layui-btn thisWidth" value="搜索" ></div>
+		 		<div class="layui-col-md1"><input type="button" class="layui-btn thisWidth" value="print" onclick="print();"></div>
+	 		</div>
+	 	</form>
+	 	<div id="print-area">
+	 		<div class="layui-row">
+	 		<h3>全店数据</h3>
+	 	</div>
+	 	<table class="layui-table topDa" >
+			<thead>
+				<tr>
+					<th>GMV</th>
+					<th>曝光量</th>
+					<th>UV</th>
+					<th>订单</th>
+					<th>L-D</th>
+					<th>D-O</th>
+					<th>客单价</th>
+					<th width="18%">问题诊断</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">1</td>
+					<td class="fontSize18">100</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="layui-row">
+			<h3>热销单品</h3>
+		</div>
+	 	<table class="layui-table" >
+			<thead>
+				<tr>
+					<th  onclick="winpop();" class="cur">排序</th>
+					<th>主图</th>
+					<th>产品ID</th>
+					<th>GMV</th>
+					<th>曝光量</th>
+					<th>UV</th>
+					<th>订单</th>
+					<th>L-D</th>
+					<th>D-O</th>
+					<th>客单价</th>
+					<th>售价</th>
+					<th>品类</th>
+					<th width="18%">优化建议</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">1</td>
+					<td><img src="images/tream.jpg" alt=""></td>
+					<td onclick="winpop();" class="cur">201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">2</td>
+					<td><img src="images/tream.jpg" alt=""></td>
+					<td onclick="winpop();" class="cur">201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">3</td>
+					<td><img src="images/tream.jpg" alt=""></td>
+					<td onclick="winpop();" class="cur">201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="layui-row">
+	 		<h3>潜力单品</h3>
+	 	</div>
+		<table class="layui-table">
+			<thead>
+				<tr>
+					<th onclick="winpop();" class="cur">排序</th>
+					<th>主图</th>
+					<th>产品ID</th>
+					<th>订单</th>
+					<th>购物车</th>
+					<th>收藏量</th>					
+					<th>UV</th>
+					<th>曝光量</th>
+					<th>L-D</th>
+					<th>D-O</th>
+					<th>售价</th>
+					<th>潜力指数</th>
+					<th width="18%">优化建议</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">1</td>
+					<td><img src="images/tream.jpg" alt=""></td>
+					<td onclick="winpop();" class="cur">201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">2</td>
+					<td onclick="winpop();" class="cur"><img src="images/tream.jpg" alt=""></td>
+					<td>201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+				<tr>
+					<td onclick="confirm('确认删除？');" class="cur">3</td>
+					<td onclick="winpop();" class="cur"><img src="images/tream.jpg" alt=""></td>
+					<td>201520162017</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>100</td>
+					<td>1000</td>
+					<td>连衣裙</td>
+					<td><div class="test_box" contenteditable="true"><br></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="layui-row">
+	 		<h3>本周总结及下周计划</h3>
+	 	</div>
+		<div class="test_box test_box_diaplay" contenteditable="true" ><br></div>
+	 	</div>
+ </div>
+
+ <ul class="layui-nav layui-nav-tree asideNav" lay-filter="test" id="weekNav">
+<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+<ul class="layui-nav layui-nav-tree layui-nav-side">
+	<li class="layui-nav-item layui-nav-itemed">
+	<a href="javascript:;">默认展开</a>
+		<dl class="layui-nav-child">
+		<dd><a href="javascript:;">选项1</a></dd>
+		<dd><a href="javascript:;">选项2</a></dd>
+		<dd><a href="">跳转</a></dd>
+		</dl>
+	</li>
+	<li class="layui-nav-item">
+	<a href="javascript:;">解决方案</a>
+		<dl class="layui-nav-child">
+		<dd><a href="">移动模块</a></dd>
+		<dd><a href="">后台模版</a></dd>
+		<dd><a href="">电商平台</a></dd>
+		</dl>
+	</li>
+	<li class="layui-nav-item"><a href="">产品</a></li>
+	<li class="layui-nav-item"><a href="">大数据</a></li>
+</ul> 
+<script src="layui.all.js"></script>
+<script src="layui.js"></script>
+<script src="./js/main.js"></script>
+ <script src="js/jquery-1.7.2.js"></script>
+ <script src="jquery.jqprint-0.3.js"></script>
+<script language="javascript">
+ function print(){
+	 $("#print-area").jqprint({
+	 debug: false, 
+	 importCSS: true, 
+	 printContainer: true, 
+	 operaSupport: false,
+	 });
+ }
+
+
+function winpop(){
+var Top=(screen.height-500)/2;
+var Left=(screen.width-1100)/2;
+var where="top=100,left=100,width=1100,height=500";
+window.open('./child.html',"",where);
+}
+</script>
+</body>
+</html>
